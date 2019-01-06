@@ -1,1 +1,15 @@
 <h1>Tareas</h1>
+
+
+<table class="table">
+  <tr>
+    <th>Tarea</th>
+    <th>Prioridad</th>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.name %></td>
+      <td><%= task.priority %></td>
+    </tr>
+  <% end %>
+</table>
