@@ -17,7 +17,7 @@ class TasksController < ApplicationController
       if @task.save
         @tasks = Task.all.order("priority ASC")
         format.json { head }
-        format.js { flash[:notice] =  'Expense has been create successfully'}
+        format.js { flash[:notice] =  'Tarea creada con exito'}
       else
         format.json { render json: @task.errors.full_messages, status: :unprocessable_entity }
       end
@@ -32,7 +32,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         format.json { head }
-        format.js { flash[:notice] =  'Expense has been create successfully'}
+        format.js { flash[:notice] =  'Tarea actualizada'}
       else
         format.json { render json: @task.errors.full_messages, status: :unprocessable_entity }
       end
@@ -50,7 +50,7 @@ class TasksController < ApplicationController
   end
 
   private
-  def set_customer
+  def set_task
   	@task = Task.find(params[:id])
   end
 
