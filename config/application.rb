@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Zonawikii
   class Application < Rails::Application
+    config.i18n.fallbacks = [I18n.default_locale]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
