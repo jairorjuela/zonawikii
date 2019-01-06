@@ -1,0 +1,8 @@
+<tr id="task_<%= task.id %>">
+  <td><%= task.name %></td>
+  <td><%= task.priority %></td>
+  <td>
+    <%= link_to 'Editar Tarea', edit_task_path(task), remote: true, :class => 'btn btn-sm btn-info' %>
+    <%= link_to 'Eliminar Tarea', task, remote: true, :method => :delete, data: {confirm: "¿Confirmas Eliminar?"}, :class => 'btn btn-sm btn-danger' %>
+  </td>
+</tr>

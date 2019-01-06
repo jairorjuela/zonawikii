@@ -1,15 +1,24 @@
-<h1>Tareas</h1>
+<div class="container">
 
+  <h1>Tareas</h1>
+  <div class="row" style="margin-top: 20px;" i>
+    <div class="col-md-12">
+      <%= link_to "Tarea Nueva".html_safe, new_task_path, remote: true, class: "btn btn-success pull-left", id: "nuevo" %>
+    </div>
+  </div>
 
-<table class="table">
-  <tr>
-    <th>Tarea</th>
-    <th>Prioridad</th>
-  </tr>
-  <% @tasks.each do |task| %>
-    <tr>
-      <td><%= task.name %></td>
-      <td><%= task.priority %></td>
-    </tr>
-  <% end %>
-</table>
+  <table id class="table">
+    <thead>
+      <tr>
+        <th>Tarea</th>
+        <th>Prioridad</th>
+      </tr>
+    </thead>
+    <tbody id="tasks">
+    <%= render @tasks %>
+    </tbody>
+  </table>
+
+  <%= render 'dialog' %>
+
+</div>
