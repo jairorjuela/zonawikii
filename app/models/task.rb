@@ -1,2 +1,3 @@
 class Task < ActiveRecord::Base
-end 
+  validates :name, presence: true
+end

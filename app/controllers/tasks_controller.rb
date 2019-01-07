@@ -44,8 +44,27 @@ class TasksController < ApplicationController
     @task.destroy
     respond_to do |format|
       format.js
-      format.html { redirect_to posts_url }
+      format.html { redirect_to tasks_url }
       format.json { head :no_content }
+    end
+  end
+
+  def set_done
+    @task = Task.find params[:id]
+    respond_to do |format|
+      if @task.done == true
+        @task.update_attributes(:done => false)
+        format.html { redirect_to tasks_url }
+        format.json { head :no_content }
+        format.js
+        @message = "false"
+      else
+        @task.update_attributes(:done => true)
+        format.html { redirect_to tasks_url }
+        format.json { hehead :no_contentad }
+        format.js
+        @message = "true"
+      end
     end
   end
 
