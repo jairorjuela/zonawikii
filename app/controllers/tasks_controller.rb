@@ -12,12 +12,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-
     respond_to do |format|
       if @task.save
-        @tasks = Task.all.order("priority ASC")
+        @tasks = Task.all.order("priority DESC")
         format.json { head }
-        format.js { flash[:notice] =  'Tarea creada con exito'}
+        format.js
       else
         format.json { render json: @task.errors.full_messages, status: :unprocessable_entity }
       end
@@ -32,7 +31,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         format.json { head }
-        format.js { flash[:notice] =  'Tarea actualizada'}
+        format.js
       else
         format.json { render json: @task.errors.full_messages, status: :unprocessable_entity }
       end
