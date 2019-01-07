@@ -1,24 +1,38 @@
 <div class="container">
 
-  <h1>Tareas</h1>
-  <div class="row" style="margin-top: 20px;" i>
-    <div class="col-md-12">
-      <%= link_to "Tarea Nueva".html_safe, new_task_path, remote: true, class: "btn btn-success pull-left", id: "nuevo" %>
+  <div class="row" id="titul">
+    <div class="col-12">
+      <h1 class="text-center">Lista de Tareas</h1>
     </div>
   </div>
 
-  <table id class="table">
-    <thead>
-      <tr>
-        <th>Tarea</th>
-        <th>Prioridad</th>
-      </tr>
-    </thead>
-    <tbody id="tasks">
-    <%= render @tasks %>
-    </tbody>
-  </table>
+<!-- Boton crear nueva tarea -->
+  <div class="row">
+    <div class="col-12">
+      <%= link_to "Tarea Nueva".html_safe, new_task_path, remote: true, class: "btn btn-lg btn-primary pull-left", id: "nuevo" %>
+    </div>
+  </div>
 
-  <%= render 'dialog' %>
+
+<!-- Tabla lista de tareas -->
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive-lg">
+        <table id class="table table-bordered">
+          <thead class="text-center">
+            <tr>
+              <th>Tarea</th>
+              <th>Prioridad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tasks" class="text-center">
+            <%= render @tasks %>
+          </tbody>
+        </table>
+        <%= render 'dialog' %>
+      </div>
+    </div>
+  </div>
 
 </div>

@@ -1,2 +1,2 @@
 $('#task_<%= @task.id %>').removeClass()
-$('#task_<%= @task.id %>').addClass('<%= j @message  %>')
+$('#task_<%= @task.id %>').replaceWith('<%= j render (@task) %>')
