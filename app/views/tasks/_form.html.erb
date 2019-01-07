@@ -3,21 +3,24 @@
 </div>
 
 <div class="row">
- <div class="col-sm-6">
-  <div class="form-group">
-    <%= f.label :name, :class => "control-label" %>
-    <%= f.text_field :name, :class => "form-control first_input", :autocomplete => :off %>
+  <div class="col-8">
+    <div class="form-group">
+      <%= f.label :name, '<h5>Nombre de la Tarea: </h5>'.html_safe, :class => "control-label" %>
+      <%= f.text_field :name, :class => "form-control first_input", :autocomplete => :off, :placeholder => "Tarea" %>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="form-group">
+      <%= f.label :priority, '<h5>Prioridad: </h5>'.html_safe %>
+      <%= f.select :priority, [["Alta"], ["Media"], ["Baja"]], class: "custom-select" %>
+    </div>
   </div>
 </div>
 
-<div class="col-sm-6">
-  <div class="form-group">
-    <%= f.label :priority, "Prioridad:" %>
-    <%= f.select :priority, [["Alta"], ["Media"], ["Baja"]], class: "form-control input-lg" %>
+<div class="modal-footer">
+  <div class="align-items-center">
+      <%= f.submit  @task.new_record? ? "Crear Tarea" : "Actualizar Tarea", :class => "btn btn-lg btn-primary", id: "nuevo" %>
   </div>
-  <div class="form-group">
-    <%= f.submit  @task.new_record? ? "Crear Tarea" : "Actualizar Tarea", :class => "btn btn-primary" %>
-  </div>
-</div>
 </div>
 <% end %>

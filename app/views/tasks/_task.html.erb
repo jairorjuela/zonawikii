@@ -1,9 +1,16 @@
 <tr id="task_<%= task.id %>" class="<%= task.done %>">
   <td><%= task.name %></td>
-  <td><%= task.priority %></td>
+  <% if task.priority == 'Alta' %>
+    <td id="alta">Prioridad Alta</td>
+  <% elsif task.priority == 'Media' %>
+    <td id="media">Prioridad Media</td>
+  <% else %>
+    <td>Prioridad Baja</td>
+  <% end %>
+
   <td>
-    <%= link_to 'Editar', edit_task_path(task), remote: true, :class => 'btn btn-sm btn-info' %>
-    <%= link_to 'Tarea Hecha', task_set_done_path(task), remote: true, :class => 'btn btn-sm btn-success', :id => 'task-id' %>
-    <%= link_to 'Eliminar', task, remote: true, :method => :delete, data: {confirm: "¿Confirmas eliminar la tarea: #{task.name} ?"}, :class => 'btn btn-sm btn-danger' %>
+    <%= link_to '<h5><i class="fas fa-pen-square"></i>  Editar</h5>'.html_safe, edit_task_path(task), remote: true, :class => 'btn btn-sm btn-info' %>
+    <%= link_to '<h5><i class="fas fa-clipboard-check"></i>  Tarea Hecha</h5>'.html_safe, task_set_done_path(task), remote: true, :class => 'btn btn-sm btn-success', :id => 'task-id' %>
+    <%= link_to '<h5><i class="fas fa-trash-alt"></i>  Eliminar</h5>'.html_safe, task, remote: true, :method => :delete, data: {confirm: "¿Confirmas eliminar la tarea: #{task.name} ?"}, :class => 'btn btn-sm btn-danger' %>
   </td>
 </tr>

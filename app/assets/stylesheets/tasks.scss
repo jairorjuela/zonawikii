@@ -19,10 +19,27 @@ body {
   color: #002f6c;
   font-size: 28px;
 }
+
 #nuevo:hover{
   font-family: 'Shadows Into Light Two', cursive;
   border: 2px solid #6a1b9a;
   background-color: #8aacc8;
+  color: white;
+}
+
+#crear{
+  font-family: 'Shadows Into Light Two', cursive;
+  border: 3px solid #e1f5fe;
+  background-color: #8aacc8;
+  color: #002f6c;
+  font-size: 20px;
+}
+
+#crear:hover{
+  font-family: 'Shadows Into Light Two', cursive;
+  border: 2px solid #6a1b9a;
+  background-color: #8aacc8;
+  font-weight: bold;
   color: white;
 }
 
@@ -42,10 +59,34 @@ h1{
   0.9px 0.9px 1 #e3f2fd;
 }
 
+h2{
+  font-family: 'Shadows Into Light Two', cursive;
+  font-weight: bold;
+  text-align: left;
+  font-size: 40px;
+  -webkit-text-stroke: 0.1px #62717b;
+  color: #002f6c;
+  text-shadow:
+  0.9px 0.9px 1 #e3f2fd,
+  -0.9px -0.9px 1 #e3f2fd,
+  0.9px -0.9px 1 #e3f2fd,
+  -0.9px 0.9px 1 #e3f2fd,
+  0.9px 0.9px 1 #e3f2fd;
+}
+
 .table-bordered, th, td{
   border: 2px solid #8aacc8;
   font-family: 'Shadows Into Light Two', cursive;
   background-color: #e3f2fd;
   color: #002f6c;
   font-size: 26px;
+}
+
+#alta{
+  background-color: #f44336;
+  color: black;
+}
+#media{
+background-color: #0d47a1;
+color: white;
 }

@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     @task = Task.create(task_params)
     respond_to do |format|
       if @task.save
-        @tasks = Task.all.order("priority DESC")
+        @tasks = Task.all
         format.json { head }
         format.js
       else
