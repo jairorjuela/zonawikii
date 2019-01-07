@@ -2,8 +2,8 @@
   <td><%= task.name %></td>
   <td><%= task.priority %></td>
   <td>
-    <%= link_to 'Editar Tarea', edit_task_path(task), remote: true, :class => 'btn btn-sm btn-info' %>
-    <%= link_to 'Eliminar Tarea', task, remote: true, :method => :delete, data: {confirm: "¿Confirmas eliminar la tarea: #{task.name} ?"}, :class => 'btn btn-sm btn-danger' %>
+    <%= link_to 'Editar', edit_task_path(task), remote: true, :class => 'btn btn-sm btn-info' %>
     <%= link_to 'Tarea Hecha', task_set_done_path(task), remote: true, :class => 'btn btn-sm btn-success', :id => 'task-id' %>
+    <%= link_to 'Eliminar', task, remote: true, :method => :delete, data: {confirm: "¿Confirmas eliminar la tarea: #{task.name} ?"}, :class => 'btn btn-sm btn-danger' %>
   </td>
 </tr>
