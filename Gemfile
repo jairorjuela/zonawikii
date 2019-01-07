@@ -9,14 +9,14 @@ gem 'rails', '~> 5.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+#DRY-GEM VALIDATION
+gem 'dry-validation', '~> 0.12.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 #Bootstrap
 gem 'bootstrap', '~> 4.2', '>= 4.2.1'
 #SAS
 gem 'sass', '~> 3.7', '>= 3.7.3'
-#mini_racer
-gem 'mini_racer'
 #sassc
 gem 'sassc'
 #jqeuery
@@ -24,7 +24,7 @@ gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
+gem 'mini_racer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
