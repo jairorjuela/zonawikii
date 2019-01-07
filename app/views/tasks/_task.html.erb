@@ -1,4 +1,5 @@
 <tr id="task_<%= task.id %>" class="<%= task.done %>">
+<% if task.user_id == current_user.id %>
   <td><%= task.name %></td>
   <% if task.priority == 'Alta' %>
     <td id="alta">Prioridad Alta</td>
@@ -13,4 +14,5 @@
     <%= link_to '<h5><i class="fas fa-clipboard-check"></i>  Tarea Hecha</h5>'.html_safe, task_set_done_path(task), remote: true, :class => 'btn btn-sm btn-success', :id => 'task-id' %>
     <%= link_to '<h5><i class="fas fa-trash-alt"></i>  Eliminar</h5>'.html_safe, task, remote: true, :method => :delete, data: {confirm: "¿Confirmas eliminar la tarea: #{task.name} ?"}, :class => 'btn btn-sm btn-danger' %>
   </td>
+<% end %>
 </tr>

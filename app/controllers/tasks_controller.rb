@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
 
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :private_acces
+
 
   def index
     @tasks = Task.all
@@ -12,6 +14,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
+    @task.user = current_user
     respond_to do |format|
       if @task.save
         @tasks = Task.all
