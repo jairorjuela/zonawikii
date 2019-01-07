@@ -1,37 +1,45 @@
-<div class="container">
-
-  <div class="row">
-    <div class="col-12">
-      <h1 class="text-center">Lista de Tareas</h1>
-    </div>
-  </div>
-
-<!-- Boton crear nueva tarea -->
-  <div class="row">
-    <div class="col-12">
-      <%= link_to "Tarea Nueva".html_safe, new_task_path, remote: true, class: "btn btn-lg pull-left", id: "nuevo" %>
-    </div>
-  </div>
-
-<!-- Tabla lista de tareas -->
-  <div class="row">
-    <div class="col-12">
-      <div class="table-responsive-lg">
-        <table class="table table-bordered">
-          <thead class="text-center">
-            <tr>
-              <th>Tarea</th>
-              <th>Prioridad</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tasks" class="text-center">
-            <%= render @tasks %>
-          </tbody>
-        </table>
-        <%= render 'dialog' %>
+<% if signed_in? %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">Lista de Tareas de <%= current_user.name %></h1>
       </div>
     </div>
-  </div>
 
-</div>
+  <!-- Boton crear nueva tarea -->
+    <div class="row">
+      <div class="col-12">
+        <%= link_to "Tarea Nueva".html_safe, new_task_path, remote: true, class: "btn btn-lg pull-left", id: "nuevo" %>
+      </div>
+    </div>
+
+  <!-- Tabla lista de tareas -->
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive-lg">
+          <table class="table table-bordered">
+            <thead class="text-center">
+              <tr>
+                <th>Tarea</th>
+                <th>Prioridad</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tasks" class="text-center">
+              <%= render @tasks %>
+            </tbody>
+          </table>
+            <%= render 'dialog' %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12">
+        <%= link_to "Salir", logout_path, method: :delete, class: "btn btn-lg pull-left", id: "nuevo" %>
+      </div>
+    </div>
+
+  </div>
+<% end %>
