@@ -24,12 +24,14 @@ class ApplicationController < ActionController::Base
   def signed_in?
     !current_user.nil?
   end
+
   helper_method :signed_in?
 
   def current_user
     @current_user ||= User.find(cookies.signed[:user_id]) if cookies.signed[:user_id]
     rescue ActiveRecord::RecordNotFound
   end
+
   helper_method :current_user
 
 end

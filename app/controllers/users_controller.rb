@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(users_params)
+    @user = User.create(users_params)
     if @user.save
-      redirect_to tasks_url
+      redirect_to root_path
     else
       render :new
     end

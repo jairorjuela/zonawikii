@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :private_acces
+  before_action :private_acces, except: [:index]
 
 
   def index
@@ -26,14 +26,10 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-    #code
-  end
-
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.json { head }
+        format.json { head :no_content}
         format.js
       else
         format.json { render json: @task.errors.full_messages, status: :unprocessable_entity }

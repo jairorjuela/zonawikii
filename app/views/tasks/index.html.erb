@@ -42,4 +42,49 @@
     </div>
 
   </div>
+
+<% else %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <blockquote class="blockquote text-center">
+          <h1>
+            TO-DO list, la App que lleva un registro de tus tareas pendientes.
+          </h1>
+          <br>
+        </blockquote>
+      </div>
+    </div>
+    <div class=row>
+      <div class="col-12">
+        <br>
+        <h2>
+          <span><i class="fas fa-clipboard-list"></i></span>
+          Hola! Si ya creaste tu cuenta dale click al boton para validarte.
+        </h2>
+        <h1 class="text-center">
+          <span><i class="far fa-hand-point-right"></i></span>
+          <span>
+            <%= link_to "Ingresa a tu App", login_path, class: "btn btn-sm", id: "nuevo" %>
+          </span>
+        </h1>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <br>
+        <h2>
+          <span><i class="fas fa-clipboard-list"></i></span>
+          Si no has creado tu cuenta, dale click al siguiente boton y registrate.
+        </h2>
+        <h1 class="text-center">
+          <span><i class="far fa-hand-point-right"></i></span>
+          <span>
+            <%= link_to "Crear cuenta", new_user_path, class: "btn btn-lg pull-left", id: "nuevo" %>
+          </span>
+        </h1>
+      </div>
+    </div>
+  </div>
 <% end %>
