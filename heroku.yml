@@ -1,0 +1,23 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+  config:
+    S3_BUCKET: my-example-bucket
+build:
+  languages:
+    - ruby
+  pre:
+    - curl https://sh.rustup.rs -sSf | sh -s -- -y
+  post:
+    - fortune | tee -a banner.txt
+  packages:
+    - imagemagick
+  config:
+    RAILS_ENV: development
+    FOO: bar
+release:
+  command:
+    - rake db:migrate
+run:
+  web: bundle exec puma -C config/puma.rb
