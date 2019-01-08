@@ -11,11 +11,9 @@ build:
     - ruby
   pre:
     - curl https://sh.rustup.rs -sSf | sh -s -- -y
-  post:
-    - fortune | tee -a banner.txt
-    config:
-      RAILS_ENV: development
-      FOO: bar
+  config:
+    RAILS_ENV: development
+    FOO: bar
   packages:
     - imagemagick
 release:
