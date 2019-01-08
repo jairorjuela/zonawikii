@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   database: postgres
-  host: <%= ENV['DATABASE_URL'] %>
+  host: <%= ENV['POSTGRES_HOST'] %>
   username: postgres
   password:
   pool: 5
@@ -17,4 +17,5 @@ test:
 
 production:
   <<: *default
+  host: <%= ENV['POSTGRES_HOST'] %>
   database: zonawikii_production

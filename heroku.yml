@@ -5,17 +5,19 @@ setup:
   config:
     S3_BUCKET: my-example-bucket
 build:
+  docker:
+    web: Dockerfile
   languages:
     - ruby
   pre:
     - curl https://sh.rustup.rs -sSf | sh -s -- -y
   post:
     - fortune | tee -a banner.txt
+    config:
+      RAILS_ENV: development
+      FOO: bar
   packages:
     - imagemagick
-  config:
-    RAILS_ENV: development
-    FOO: bar
 release:
   command:
     - rake db:migrate
