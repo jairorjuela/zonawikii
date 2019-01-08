@@ -47,6 +47,7 @@ class TasksController < ApplicationController
     end
   end
 
+# Metodo que permite cambiaf el estado de la tarea de hecha a pendiente
   def set_done
     @task = Task.find params[:id]
     respond_to do |format|

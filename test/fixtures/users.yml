@@ -1,0 +1,9 @@
+one:
+  name: 'Jairo'
+  email: 'jairo@correo.com'
+  password_digest: '123ert&$'
+
+two:
+  name: 'Andres'
+  email: 'otro@mail.com'
+  password_digest: '123565676'
